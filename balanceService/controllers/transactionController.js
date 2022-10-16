@@ -28,11 +28,14 @@ const dealing = async (req, res) => {
   try {
     console.log(req.query.choice);
 
+    // if the User Address is given in the URL or a default address will be taken
+    let UserAddress =
+      req.params.user !== ""
+        ? req.params.user
+        : "0xce94e5621a5f7068253c42558c147480f38b5e0d";
+
     // Either the query choice will match or the "to" address will be matched to the given User address
-    if (
-      req.query.choice === "to" ||
-      req.params.address1 === "0xce94e5621a5f7068253c42558c147480f38b5e0d"
-    ) {
+    if (req.query.choice === "to" || req.params.address1 === UserAddress) {
       let us1 = await transactionModel.findOne({
         address: req.params.address1,
       });
