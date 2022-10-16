@@ -1,0 +1,15 @@
+version: "0.0.1"
+services:
+  client:
+    build: ./balanceService
+    container_name: balanceService
+    ports:
+      - '4000:4000'
+    volumes:
+      - ./balanceService:/app
+  server:
+    build: ./src
+    container_name: srcService
+    ports:
+      - '3000:3000'
+    stdin_open: true  #start the container in interactive mode
