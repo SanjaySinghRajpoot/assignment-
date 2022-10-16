@@ -13,7 +13,7 @@ const transcation = async (req, res) => {
     let data = result.data;
     res.status(200).send({ msg: data, status: true });
   } catch (err) {
-    res.status(500).send({ msg: err.message });
+    res.status(500).send({ msg: err});
   }
 };
 
@@ -29,7 +29,7 @@ const registerAddress = async (req, res) => {
     let data = await transactionModel.create(req.body);
     return res.status(201).send({ msg: "successfully added", result: data });
   } catch (err) {
-    res.status(500).send({ msg: err.message });
+    res.status(500).send({ msg: err});
   }
 };
 
@@ -57,7 +57,7 @@ const ethereum = async (req, res) => {
 
     res.status(200).send({ msg: data, status: true });
   } catch (err) {
-    res.status(500).send({ msg: err.message });
+    res.status(500).send({ msg: err});
   }
 };
 
@@ -69,7 +69,7 @@ const registerCurrency = async (req, res) => {
     let ans = await coinModel.create(data);
     return res.status(201).send(ans);
   } catch (err) {
-    res.status(500).send({ msg: err.message });
+    res.status(500).send({ msg: err});
   }
 };
 
@@ -80,7 +80,7 @@ const geteth = async (req, res) => {
     let result = await coinModel.find();
     res.status(200).send({ data: result });
   } catch (err) {
-    res.status(500).send({ msg: err.message });
+    res.status(500).send({ msg: err });
   }
 };
 
