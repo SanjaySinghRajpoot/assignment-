@@ -12,4 +12,4 @@ services:
     container_name: srcService
     ports:
       - '3000:3000'
-    stdin_open: true  #start the container in interactive mode
+    stdin_open: true 

@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 
+
+// coin model
 const coinModel = new mongoose.Schema(
   {
     ethereum: {
