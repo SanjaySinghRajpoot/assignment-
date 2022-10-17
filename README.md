@@ -34,6 +34,7 @@ I have created a microservice application for this assignment. There are two ser
 # Installation 
 
 - Added `API_KEY` and `CONNECTION_URL` to the .env file inside each application \
+- Note : change the name of root folder from `assignment-` to `assignment` (typo fix) 
 - After adding the keys go to the root project and run `docker compose up`
 - `srcService` will be available in the port `3000` and `srcService` will be available on port `4000`
 
